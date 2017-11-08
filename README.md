@@ -5,6 +5,7 @@ Sequence-to-sequence model for text simplification.
   - text_simplification.py
   - text_simplification_characters.py
 
+Reference: [tensor2tensor](https://github.com/tensorflow/tensor2tensor)
 
 ### Docker Installation
 
@@ -79,6 +80,3 @@ t2t-decoder \
   > text_simplification.decode.output.txt 2>&1
   ```
 Output stored in **text_simplification.decode.output.txt**
-
-  
-Reference: [tensor2tensor](https://github.com/tensorflow/tensor2tensor)
