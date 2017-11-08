@@ -10,12 +10,12 @@ Sequence-to-sequence model for text simplification.
 
 Requires [TensorFlow](https://www.tensorflow.org/install/) to run Tensor2Tensor.
 
-```python
+```
 # Launch the latest TensorFlow GPU binary image in a Docker container
 $ nvidia-docker run -it gcr.io/tensorflow/tensorflow:latest-gpu /bin/bash
 ```
 
-```python
+```
 # Install with tensorflow-gpu requirement
 $ pip install tensor2tensor[tensorflow_gpu]
 ```
@@ -24,11 +24,11 @@ $ pip install tensor2tensor[tensorflow_gpu]
 > T2T's components are registered using a central registration mechanism that enables easily adding new ones and easily swapping amongst them by command-line flag.
 
 Specify the --t2t_usr flag in t2t-trainer.
-```python
+```
 $ t2t-trainer --t2t_usr=/usr/t2t_usr --registry_help
 ```
 
-```bash
+```
 PROBLEM=text_simplification
 MODEL=transformer
 HPARAMS=transformer_base_single_gpu
@@ -41,7 +41,7 @@ mkdir -p $DATA_DIR $TMP_DIR $TRAIN_DIR
 ```
 
 ### Generate Data
-```python
+```
 t2t-datagen \
   --data_dir=$DATA_DIR \
   --tmp_dir=$TMP_DIR \
@@ -49,7 +49,7 @@ t2t-datagen \
 ```
 
 ### Train
-```python
+```
 t2t-trainer \
   --data_dir=$DATA_DIR \
   --problems=$PROBLEM \
@@ -60,14 +60,14 @@ t2t-trainer \
 ```
 Output stored in **text_simplification.train.output.txt**
 ### Decode
-```bash
+```
 DECODE_FILE=$DATA_DIR/normal.valid.txt
 
 BEAM_SIZE=4
 ALPHA=0.6
 ```
 
-```python
+```
 t2t-decoder \
   --data_dir=$DATA_DIR \
   --problems=$PROBLEM \
